@@ -12,10 +12,11 @@ const router = require('./routes')
 const logger = require('./utils/logger')
 const setup = require('./config/setup')
 require('./config/db')
+config.port = 8888;
 
 const app = new Koa()
 
-// 日志，会在控制台显示请求的方法和路由
+// Log, Method, Router 표시
 app.use(koaLogger())
 
 app.keys = [config.secretKey]
@@ -36,7 +37,7 @@ app.use(bodyparser({
 }))
 
 app.use(staticServe(path.join(__dirname, 'public'), {
-  maxage: 7 * 24 * 60 * 60 // 7 天不更新，也就是缓存期限
+  maxage: 7 * 24 * 60 * 60 // 캐시 (7일)
 }))
 
 app.use(async (ctx, next) => {

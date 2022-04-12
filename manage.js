@@ -100,7 +100,7 @@ async function judgeSetup () {
 }
 
 async function staticFilesSetUp () {
-  const res = await fetch('https://api.github.com/repos/acm309/PutongOJ-FE/releases')
+  const res = await fetch('https://github.com/RATS-make-robot/code.mju-rats.com')
   const json = await res.json()
   const url = json[0].assets[0].browser_download_url
   shell.exec(`wget ${url} -O dist.zip`)
@@ -111,7 +111,7 @@ async function staticFilesSetUp () {
 function main () {
   return Promise.all([
     judgeSetup(),
-    staticFilesSetUp()
+    // staticFilesSetUp()
   ])
 }
 
