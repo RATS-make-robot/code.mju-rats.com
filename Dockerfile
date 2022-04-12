@@ -20,7 +20,7 @@ RUN yarn install --production && mv node_modules ../
 
 COPY . .
 
-EXPOSE 3000
+EXPOSE 8888
 
 RUN node manage.js
 CMD ["npx", "pm2", "start", "pm2.config.json", "--no-daemon"]
