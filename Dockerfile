@@ -1,7 +1,7 @@
 FROM node:16
 ENV NODE_ENV production
 
-WORKDIR /app
+WORKDIR /code.mju-rats.com-be/
 
 # https://github.com/kkarczmarczyk/docker-node-yarn/blob/master/latest/Dockerfile
 RUN apt-get update && apt-get install -y curl apt-transport-https && \

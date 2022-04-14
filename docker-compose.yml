@@ -35,11 +35,11 @@ services:
     cap_add:
       - SYS_PTRACE
 
-  #code.mju-rats.com-fe:
-    #image: code.mju-rats.com-fe
-    #container_name: code.mju-rats.com-fe
-    #ports:
-    #  - 3000:3000
-    ####depends_on:
-    #  - code.mju-rats.com-be
-    #restart: always
+  code.mju-rats.com-fe:
+    image: code.mju-rats.com-fe
+    container_name: code.mju-rats.com-fe
+    ports:
+      - 3000:3000
+    depends_on:
+      - code.mju-rats.com-be
+    restart: always
