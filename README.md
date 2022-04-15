@@ -19,7 +19,7 @@
 1. clone project
 
 ```bash
-git clone --recursive https://github.com/RATS-make-robot/code.mju-rats.com-FE.git
+git clone --recursive https://github.com/RATS-make-robot/code.mju-rats.com.git
 ```
 
 2. run
@@ -33,7 +33,7 @@ docker-compose up --build -d
 1. clone project
 
 ```bash
-git clone --recursive https://github.com/RATS-make-robot/code.mju-rats.com-FE.git
+git clone --recursive https://github.com/RATS-make-robot/code.mju-rats.com.git
 ```
 2. run
 
