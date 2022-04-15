@@ -14,7 +14,7 @@
 
 ## Docker
 
-### Dev 
+### Production 
 
 1. clone project
 
@@ -28,7 +28,7 @@ git clone --recursive https://github.com/RATS-make-robot/code.mju-rats.com-FE.gi
 docker-compose up --build -d
 ```
 
-### Production
+### Dev
 
 1. clone project
 
@@ -47,8 +47,8 @@ Enjoy it!
 
 
 ### TODO 
- [] docker-compose (DEV/Production)
-
+ - [X] docker-compose (DEV/Production)
+ - [ ] Auto reload for dev
 
 
 > (For version 1, please visit [here](https://github.com/acm309/PutongOJ/tree/v1))
