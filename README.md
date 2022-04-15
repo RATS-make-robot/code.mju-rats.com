@@ -1,46 +1,44 @@
 # code.mju-rats.com 
 해당 프로젝트는 [PutongOJ](https://github.com/acm309/PutongOJ.git) 를 수정하였습니다.
 
-### Features
+## Features
 - Built on Docker -- One click Deployment
 - Single Page Application -- Better User Experience
 - Support multiple cases of test data
 - Powered by Vue.js, Koa.js, MongoDB, Redis
 
 
-### 주요 변경 사항 
+## 주요 변경 사항 
  - FE/BE 의존성 제거 
  - FE/BE dockerize (docker-compose)
 
-### Docker
+## Docker
 
-1. clone Frontend
+### Dev 
+
+1. clone project
 
 ```bash
-git clone https://github.com/RATS-make-robot/code.mju-rats.com-FE.git
+git clone --recursive https://github.com/RATS-make-robot/code.mju-rats.com-FE.git
 ```
 
-2. Build Frontend image 
+2. run
+
 ```bash
-docker build -t 'code.mju-rats.com-fe' .
+docker-compose up --build -d
 ```
 
-3. clone Backend
+### Production
+
+1. clone project
 
 ```bash
-git clone https://github.com/RATS-make-robot/code.mju-rats.com.git
+git clone --recursive https://github.com/RATS-make-robot/code.mju-rats.com-FE.git
 ```
-
-4. build
-
-```bash
-docker-compose build
-```
-
-5. run
+2. run
 
 ```bash
-docker-compose up -d
+docker-compose -f docker-compose-dev.yml up --build -d
 ```
 
 It will listen on 3000 ports after it is successfully deployed. Then you can directly visit this platform.
