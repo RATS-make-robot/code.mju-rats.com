@@ -37,7 +37,7 @@ const create = async (ctx) => {
 
   const doc = await Tag.findOne({ tid: opt.tid }).exec()
   if (doc) {
-    ctx.throw(400, '标签名已被占用!')
+    ctx.throw(400, '사용중인 태그입니다!')
   }
 
   const tag = new Tag(Object.assign(

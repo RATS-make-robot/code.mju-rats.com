@@ -38,7 +38,7 @@ services:
   code.mju-rats.com-fe:
     image: code.mju-rats.com-fe
     build:
-        context: code.mju-rats.com-fe/
+        context: code.mju-rats.com-FE/
         dockerfile: Dockerfile
     container_name: code.mju-rats.com-fe
     environment:

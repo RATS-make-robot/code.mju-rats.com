@@ -51,7 +51,7 @@ config.secretKey = process.env.secretKey
 config.dbURL = process.env.DBURL || process.env.dbURL // 之所以两个只为了兼容旧版命名；请优先采用后者
 
 config.mail = {
-  enable: true, // set false to disable email notifications
+  enable: false, // set false to disable email notifications
   // https://nodemailer.com/about/
   host: 'smtp-mail.outlook.com',
   port: 587,

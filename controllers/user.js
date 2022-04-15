@@ -81,7 +81,7 @@ const create = async (ctx) => {
   // user.create = moment(objectIdToTimestamp(user._id)).format('YYYY-MM-DD HH:mm:ss')
   const doc = await User.findOne({ uid: user.uid }).exec()
   if (doc) {
-    ctx.throw(400, '用户名已被占用!')
+    ctx.throw(400, '사용중인 이름입니다!')
   }
   try {
     await user.save()

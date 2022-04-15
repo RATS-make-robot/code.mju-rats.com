@@ -25,7 +25,7 @@ const root = async (ctx, next) => {
 const handler = async function (ctx) {
   ctx.status = 429
   ctx.body = {
-    error: '请求次数过高，请过一会重试'
+    error: '요청 횟수가 너무 높습니다. 잠시 후에 다시 시도해 보십시오.'
   }
   if (this.options && this.options.headers) {
     ctx.set('Retry-After', Math.ceil(this.options.interval / 1000))

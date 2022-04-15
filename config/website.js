@@ -1,6 +1,6 @@
 module.exports = {
-  title: 'Putong OJ',
-  discussOnProblem: true,
+  title: 'RATS OJ',
+  discussOnProblem: false,
   semi_restful: false
 }
 
