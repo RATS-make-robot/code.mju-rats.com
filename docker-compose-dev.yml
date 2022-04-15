@@ -1,0 +1,50 @@
+version: '2.1'
+
+services:
+  rats-db:
+    image: mongo:latest
+    container_name: rats-db
+    restart: always
+    volumes:
+      - $PWD/migrations/db:/data/db
+      - $PWD/migrations/backup:/data/backup
+
+  rats-redis:
+    image: redis:latest
+    container_name: rats-redis
+    restart: always
+  
+  code.mju-rats.com-be:
+    image: code.mju-rats.com-be
+    container_name: code.mju-rats.com-be
+    build: .
+    environment:
+      - NODE_ENV=production
+      - dbURL=mongodb://rats-db:27017/oj
+      - redisURL=redis://rats-redis:6379
+    ports: 
+      - 8888:8888
+    volumes:
+      - $PWD/data:/app/data
+      - $PWD/logs:/app/logs
+      # warning: volumn is not available on building period
+    depends_on:
+      - rats-redis
+      - rats-db
+    restart: always
+    cap_add:
+      - SYS_PTRACE
+
+  code.mju-rats.com-fe:
+    image: code.mju-rats.com-fe
+    container_name: code.mju-rats.com-fe
+    build:
+       context: code.mju-rats.com-FE/
+       dockerfile: Dockerfile-dev
+    environment:
+      - RATS_BE_ADDRESS=http://localhost:8888
+    ports:
+      - 3000:3000
+    depends_on:
+      - code.mju-rats.com-be
+    restart: always
