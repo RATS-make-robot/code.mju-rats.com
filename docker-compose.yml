@@ -38,6 +38,8 @@ services:
   code.mju-rats.com-fe:
     image: code.mju-rats.com-fe
     container_name: code.mju-rats.com-fe
+    environment:
+      - RATS_BE_ADDRESS=http://code.mju-rats.com-be:8888
     ports:
       - 3000:3000
     depends_on:

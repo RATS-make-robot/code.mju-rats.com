@@ -1,0 +1,3 @@
+[submodule "code.mju-rats.com-FE"]
+	path = code.mju-rats.com-FE
+	url = https://github.com/RATS-make-robot/code.mju-rats.com-FE.git
